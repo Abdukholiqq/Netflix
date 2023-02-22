@@ -26,19 +26,11 @@ function Header() {
           <div className="Navbar d-flex gap-3 ">
             <Link to={"/"}>
               <h6>Ana Sayfa</h6>
-            </Link>
-            <Link to={"/serials"}>
-              <h6>Diziler</h6>
-            </Link>
-            <Link to={'/films'}>
-              <h6>Filmler</h6>
-            </Link>
-            <Link to={'/popular'}>
-              <h6>Yeni ve Popüler</h6>
-            </Link>
-            <Link to={'/playlist'}>
-              <h6>Listem</h6>
-            </Link>
+            </Link> 
+              <h6>Diziler</h6>  
+              <h6>Filmler</h6>  
+              <h6>Yeni ve Popüler</h6>  
+              <h6>Listem</h6> 
           </div>
         </div>
         <div style={{ alignItems: "center" }} className="d-flex gap-3 ">
