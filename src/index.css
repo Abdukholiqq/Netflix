@@ -51,3 +51,6 @@ code {
 .searchpage{
   display: flex !important;
 }
+:Link{
+  text-decoration: none;
+}

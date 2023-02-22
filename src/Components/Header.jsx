@@ -24,11 +24,21 @@ function Header() {
         <div style={{ alignItems: "center" }} className="d-flex gap-3 ">
           <img src={logo} alt="Netflix" width={111} height={30} />
           <div className="Navbar d-flex gap-3 ">
-            <h6>Ana Sayfa</h6>
-            <h6>Diziler</h6>
-            <h6>Filmler</h6>
-            <h6>Yeni ve Popüler</h6>
-            <h6>Listem</h6>
+            <Link to={"/"}>
+              <h6>Ana Sayfa</h6>
+            </Link>
+            <Link to={"/serials"}>
+              <h6>Diziler</h6>
+            </Link>
+            <Link to={'/films'}>
+              <h6>Filmler</h6>
+            </Link>
+            <Link to={'/popular'}>
+              <h6>Yeni ve Popüler</h6>
+            </Link>
+            <Link to={'/playlist'}>
+              <h6>Listem</h6>
+            </Link>
           </div>
         </div>
         <div style={{ alignItems: "center" }} className="d-flex gap-3 ">
@@ -41,12 +51,12 @@ function Header() {
             className="border rounded-3 px-2"
             type="text"
             placeholder="Search Movies"
-            />
-              <Link to={`/movie/${search.search}`}>
-          <label htmlFor="search">
-            <img src={searchIcon} alt="search" width={19.31} height={20} />
-          </label>
-            </Link>
+          />
+          <Link to={`/movie/${search.search}`}>
+            <label htmlFor="search">
+              <img src={searchIcon} alt="search" width={19.31} height={20} />
+            </label>
+          </Link>
           <h6 className="mb-0">Vodil</h6>
           <img src={present} alt="present" width={19.3} height={20} />
           <img

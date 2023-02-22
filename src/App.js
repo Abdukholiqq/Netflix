@@ -10,13 +10,15 @@ import Search from "./Components/Search";
 import Login from "./Pages/Login";
 import { AuthContext } from "./Context/AuthContext";
 import { useContext } from "react";
+import { Films } from "./Pages/Category";
+
 function App() {
   const { user } = useContext(AuthContext);
   return (
     <div className="App">
       {user?.isLogin ? (
         <> 
-
+<Films></Films>
           <Header /> 
           <Routes>
 

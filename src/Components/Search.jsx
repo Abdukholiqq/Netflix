@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react"; 
+import { Link } from "react-router-dom";
 import { AuthContext } from "../Context/AuthContext";
 import { BaseUrl } from "./BaseUrl";
 import EventsLoader from "./Loader";
@@ -33,15 +34,17 @@ function Search() {
     }
   return (
     <div className="container my-5 ">
-      {post?.data?.results?.map((items, i) => {
+      {post?.data?.results?.map((item, i) => {
         return (
           <div key={i} className="d-flex justify-content-between flex-wrap">
+             <Link to={`/movies/${item.id}`}>
             <div className="w-25  mt-5">
-              <img src={BaseUrl + items.poster_path} alt="images" width={300} />
+              <img src={BaseUrl + item.poster_path} alt="images" width={300} />
               <h4>
-                {items.title} . {items.release_date}
+                {item.title} . {item.release_date}
               </h4>
             </div>
+            </Link>
           </div>
         );
       })}

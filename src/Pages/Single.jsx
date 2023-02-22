@@ -11,6 +11,8 @@ import EventsLoader from '../Components/Loader'
 // import "video-react/styles/scss/video-react";
 {/* <link rel="stylesheet" href="/css/video-react.css" />; */}
 
+// https://api.themoviedb.org/3/movie/{movie_id}/videos?api_key=873400dd977810e70390e633a4d42b3d&language=en-US
+
 function Single() {
  
   const { name } = useParams();
