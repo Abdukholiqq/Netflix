@@ -5,9 +5,49 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-decoration: none; 
+  background-color: #141414;
+  color: #E5E5E5;
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+} 
+.hero{
+  width: 100%;
+  height: 870px;
+  margin-top: 20px;
+  background-image: url("./assets/Images/MoviePoster.png");
+  background-size: cover; 
+  background-repeat: no-repeat;
+} 
+.primary{ 
+  background: #ffffff4d;
+  color: #fff; 
+}
+ .li{
+   list-style: none;
+   font-size: 13px;
+   color: #808080;
+ }
+ .loginpage{
+  background-image: url(https://assets.nflxext.com/ffe/siteui/vlv3/83e8c151-107d-4e8f-b95a-d2ba99d49bb9/2420f2ca-96c7-4673-bfe3-acc19de04cfc/UZ-en-20230213-popsignuptwoweeks-perspective_alpha_website_large.jpg);
+ }
+ /* this code for video */
+ .video-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+
+.video-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+.searchpage{
+  display: flex !important;
 }
