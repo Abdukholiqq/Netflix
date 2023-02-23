@@ -11,7 +11,7 @@ import natification from "../assets/Images/Natification.svg";
 import profileIcon from "../assets/Images/ProfileIMG.svg";
 const customStyles = {
   content: {
-    top: "25%",
+    top: "15%",
     left: "92%",
     right: "auto",
     bottom: "auto",
