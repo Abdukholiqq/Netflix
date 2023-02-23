@@ -26,8 +26,11 @@ function Header() {
   const [modalIsOpen, setIsOpen] = useState(false);
   const { search, setSearch, logOut } = useContext(AuthContext);
   const openModal = ()=>{
-    setIsOpen(true) 
+    setIsOpen(true)  
   }
+  const closeModal = () => {
+    setIsOpen(false); 
+  };
   return (
     <div
       style={{ zIndex: 1554555 }}
@@ -36,8 +39,8 @@ function Header() {
         style={{ alignItems: "center" }}
         className=" container d-flex justify-content-between py-3 ">
         <div style={{ alignItems: "center" }} className="d-flex gap-3 ">
-          <Link to={'/'}>
-          <img src={logo} alt="Netflix" width={111} height={30} />
+          <Link to={"/"}>
+            <img src={logo} alt="Netflix" width={111} height={30} />
           </Link>
           <div className="Navbar d-flex gap-3">
             <Link to={"/"}>
@@ -76,6 +79,7 @@ function Header() {
           <h6 className="mb-0">Vodil</h6>
           <img src={present} alt="present" width={19.3} height={20} />
           <img
+            onClick={closeModal}
             src={natification}
             alt="natification"
             width={18.56}
@@ -83,9 +87,14 @@ function Header() {
           />
           <div onClick={openModal} className="profile">
             <img src={profileIcon} alt="profile" width={32} height={32} />
-            <Modal isOpen={modalIsOpen} style={customStyles}>
-              <button onClick={logOut} className="logout btn bg-danger"> Log Out</button>
-            </Modal>
+            <Modal
+              isOpen={modalIsOpen}
+              style={customStyles}
+              onRequestClose={closeModal}> 
+              <button onClick={logOut} className="logout btn bg-danger">
+                Log Out
+              </button> 
+            </Modal> 
           </div>
         </div>
       </div>
