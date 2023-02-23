@@ -26,8 +26,7 @@ code {
   color: #fff; 
 }
  .li{
-   list-style: none;
-   font-size: 13px;
+   list-style: none; 
    color: #808080;
  }
  .loginpage{
@@ -40,17 +39,18 @@ code {
   position: relative;
   height: 0;
 }
-
 .video-responsive iframe {
   left: 0;
   top: 0;
   height: 100%;
   width: 100%;
   position: absolute;
-}
-.searchpage{
-  display: flex !important;
-}
+} 
 :Link{
   text-decoration: none;
 }
+/* .ReactModal__Content--after-open {
+  position: static !important;
+  background-color: transparent !important;
+  opacity: 1 !important;
+} */

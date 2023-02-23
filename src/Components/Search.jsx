@@ -19,7 +19,8 @@ function Search() {
       setLoading(false)
     };
     result(post);
-  }, []); 
+  }, []);  
+ 
     if (loading) {
       return (
         <div className="d-flex container flex-wrap">
@@ -33,19 +34,17 @@ function Search() {
       );
     }
   return (
-    <div className="container my-5 ">
+    <div className="container my-5 d-flex flex-wrap">
       {post?.data?.results?.map((item, i) => {
         return (
-          <div key={i} className="d-flex justify-content-between flex-wrap">
-             <Link to={`/movies/${item.id}`}>
-            <div className="w-25  mt-5">
-              <img src={BaseUrl + item.poster_path} alt="images" width={300} />
-              <h4>
-                {item.title} . {item.release_date}
+          <div key={i} className=" w-25 mt-5">
+             <Link to={`/movies/${item.id}`}> 
+              <img src={BaseUrl + item.poster_path} alt="images" height={400} width={300} className='border rounded-4'/>
+              <h4 style={{width:350}}>
+                {item.title} </h4><h4>{item.release_date}
               </h4>
+            </Link> 
             </div>
-            </Link>
-          </div>
         );
       })}
     </div>

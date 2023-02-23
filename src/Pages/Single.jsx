@@ -84,7 +84,7 @@ function Single() {
 
         <img
           className="border border-0 rounded-4"
-          src={BaseUrl + json?.poster_path}
+          src={ BaseUrl+ json?.poster_path}
           alt=" We don't have this movie"
           width={350}
           height={450}

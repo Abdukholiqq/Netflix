@@ -1,19 +1,33 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../Context/AuthContext";
+import Modal from "react-modal";
 
 // import images
 import logo from "../assets/Images/Netflix.svg";
 import searchIcon from "../assets/Images/searchIcon.svg";
 import present from "../assets/Images/present.svg";
 import natification from "../assets/Images/Natification.svg";
-import profileIcon from "../assets/Images/ProfileIMG.svg";   
-import { AuthContext } from "../Context/AuthContext";
+import profileIcon from "../assets/Images/ProfileIMG.svg";
+const customStyles = {
+  content: {
+    top: "25%",
+    left: "92%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+    backgroundColor: 'transparent' ,   
+  },
+};
 
+// Modal.setAppElement("#yourAppElement");
 function Header() {
-    // const {  search} = useParams();
-    // const searchHandler = ; 
-    //         } 
-      const { search, setSearch } = useContext(AuthContext); 
+  const [modalIsOpen, setIsOpen] = useState(false);
+  const { search, setSearch, logOut } = useContext(AuthContext);
+  const openModal = ()=>{
+    setIsOpen(true) 
+  }
   return (
     <div
       style={{ zIndex: 1554555 }}
@@ -22,15 +36,25 @@ function Header() {
         style={{ alignItems: "center" }}
         className=" container d-flex justify-content-between py-3 ">
         <div style={{ alignItems: "center" }} className="d-flex gap-3 ">
+          <Link to={'/'}>
           <img src={logo} alt="Netflix" width={111} height={30} />
-          <div className="Navbar d-flex gap-3 ">
+          </Link>
+          <div className="Navbar d-flex gap-3">
             <Link to={"/"}>
               <h6>Ana Sayfa</h6>
-            </Link> 
-              <h6>Diziler</h6>  
-              <h6>Filmler</h6>  
-              <h6>Yeni ve Popüler</h6>  
-              <h6>Listem</h6> 
+            </Link>
+            <Link to={"/series"}>
+              <h6>Diziler</h6>
+            </Link>
+            <Link to={"/films"}>
+              <h6>Filmler</h6>
+            </Link>
+            <Link to={"/popular"}>
+              <h6>Yeni ve Popüler</h6>
+            </Link>
+            <Link to={"/listem"}>
+              <h6>Listem</h6>
+            </Link>
           </div>
         </div>
         <div style={{ alignItems: "center" }} className="d-flex gap-3 ">
@@ -57,7 +81,12 @@ function Header() {
             width={18.56}
             height={16.85}
           />
-          <img src={profileIcon} alt="profile" width={32} height={32} />
+          <div onClick={openModal} className="profile">
+            <img src={profileIcon} alt="profile" width={32} height={32} />
+            <Modal isOpen={modalIsOpen} style={customStyles}>
+              <button onClick={logOut} className="logout btn bg-danger"> Log Out</button>
+            </Modal>
+          </div>
         </div>
       </div>
     </div>
